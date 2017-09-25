@@ -56,4 +56,9 @@ public class Counter {
         this.currentValue = currentValue;
         this.comment = comment;
     }
+    @Override
+    public String toString(){
+        // this value will be used by the array list to display the counter name in the ListView
+        return this.name;
+    }
 }
