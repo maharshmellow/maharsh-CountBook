@@ -22,9 +22,30 @@ public class Counter {
         this.comment = comment;
     }
 
-    public void updateCounter(int incrementValue){
-        // increments the counter (decrements if incrementValue < 0)
-        this.currentValue += incrementValue;
+    public void increment(){
+        this.currentValue += 1;
+    }
 
+    public void decrement(){
+        this.currentValue -= 1;
+    }
+
+    public void reset(){
+        this.currentValue = this.initialValue;
+    }
+
+    public int getCurrentValue(){
+        return this.currentValue;
+    }
+
+    public int getInitialValue(){
+        return this.initialValue;
+    }
+
+    public void editCounter(String name, int initialValue, int currentValue, String comment){
+        this.name = name;
+        this.initialValue = initialValue;
+        this.currentValue = currentValue;
+        this.comment = comment;
     }
 }

@@ -8,6 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,15 +24,34 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final ListView counters = (ListView) findViewById(R.id.counters);
+
+        // Initializing a new String Array
+        String[] fruits = new String[] {
+                "Cape Gooseberry",
+                "Capuli cherry"
+        };
+
+        final List<String> fruits_list = new ArrayList<String>(Arrays.asList(fruits));
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
+                (this, android.R.layout.simple_list_item_1, fruits_list);
+        counters.setAdapter(arrayAdapter);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Testing", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Testing", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
                 System.out.println("FAB Clicked");
+                fruits_list.add("Loquat");
+                fruits_list.add("Pear");
+                arrayAdapter.notifyDataSetChanged();
+
             }
         });
+
+
     }
 
     @Override
