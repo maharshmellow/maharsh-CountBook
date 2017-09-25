@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         final List<String> fruits_list = new ArrayList<String>(Arrays.asList(fruits));
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
-                (this, R.layout.test, R.id.counter_text, fruits_list);
+                (this, R.layout.counter_item, R.id.counter_text, fruits_list);
         counters.setAdapter(arrayAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -74,5 +76,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void counterClickHandler(View v){
+        LinearLayout parent = (LinearLayout)v.getParent();
+        TextView counterText = (TextView)parent.getChildAt(0);
+
+        System.out.println(counterText.getText());
+
+        System.out.println("Clicked");
     }
 }
