@@ -9,13 +9,21 @@
     tools:showIn="@layout/activity_main"
     tools:context="net.maharsh.maharsh_countbook.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ListView
+        android:id="@+id/counters"
+        android:layout_width="0dp"
+        android:layout_height="495dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent">
 
+    </ListView>
 </android.support.constraint.ConstraintLayout>
