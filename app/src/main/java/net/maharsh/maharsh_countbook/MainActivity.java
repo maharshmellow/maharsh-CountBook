@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         final List<String> fruits_list = new ArrayList<String>(Arrays.asList(fruits));
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
-                (this, R.layout.counter_item, fruits_list);
+                (this, R.layout.test, R.id.counter_text, fruits_list);
         counters.setAdapter(arrayAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
