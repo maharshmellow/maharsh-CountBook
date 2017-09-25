@@ -42,6 +42,14 @@ public class Counter {
         return this.initialValue;
     }
 
+    public String getComment(){
+        return this.comment;
+    }
+
+    public Date getDateCreated(){
+        return this.dateCreated;
+    }
+
     public void editCounter(String name, int initialValue, int currentValue, String comment){
         this.name = name;
         this.initialValue = initialValue;

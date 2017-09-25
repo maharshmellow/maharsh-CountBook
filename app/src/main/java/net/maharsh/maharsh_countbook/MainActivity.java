@@ -28,15 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
         final ListView counters = (ListView) findViewById(R.id.counters);
 
-        // Initializing a new String Array
-        String[] fruits = new String[] {
-                "Cape Gooseberry",
-                "Capuli cherry"
+        // TODO load the saved counters here
+        String[] initial_counters = new String[] {
+                "Counter 1",
+                "Counter 2"
         };
 
-        final List<String> fruits_list = new ArrayList<String>(Arrays.asList(fruits));
+        final List<String> counters_list = new ArrayList<String>(Arrays.asList(initial_counters));
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
-                (this, R.layout.counter_item, R.id.counter_text, fruits_list);
+                (this, R.layout.counter_item, R.id.counter_text, counters_list);
         counters.setAdapter(arrayAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -46,13 +46,11 @@ public class MainActivity extends AppCompatActivity {
 //                Snackbar.make(view, "Testing", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
                 System.out.println("FAB Clicked");
-                fruits_list.add("Loquat");
-                fruits_list.add("Pear");
+                counters_list.add("Counter X");
                 arrayAdapter.notifyDataSetChanged();
 
             }
         });
-
 
     }
 
@@ -79,11 +77,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void counterClickHandler(View v){
-        LinearLayout parent = (LinearLayout)v.getParent();
-        TextView counterText = (TextView)parent.getChildAt(0);
+        View parentRow = (View) v.getParent();
+        ListView listView = (ListView) parentRow.getParent();
+        final int position = listView.getPositionForView(parentRow);
 
-        System.out.println(counterText.getText());
+        // index of the counter in the counters array
+        System.out.println(position);
 
-        System.out.println("Clicked");
     }
 }
