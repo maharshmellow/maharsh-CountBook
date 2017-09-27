@@ -20,6 +20,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final List<Counter> counters = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         // initialize the counters
         // TODO load the counters from the local storage here
-        final List<Counter> counters = new ArrayList<>();
 
         final ArrayAdapter<Counter> arrayAdapter = new ArrayAdapter<Counter>
                 (this, R.layout.counter_item, R.id.counter_text, counters);
@@ -46,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
                 System.out.println("FAB Clicked");
                 // add new counter
-                Counter c = new Counter("Counter 1", 10, "comment");
+                Counter c = new Counter("Counter 1", 0, "comment");
                 counters.add(c);
+                System.out.println("First: " + counters.size());
 
                 arrayAdapter.notifyDataSetChanged();
 
@@ -89,12 +91,16 @@ public class MainActivity extends AppCompatActivity {
         // TODO remove this later when the button is converted to an image since we just need the position and don't care about the name
         String buttonName = ((Button) v).getText().toString();
 
+        Counter counter = counters.get(position);
+
         if (buttonName.equals("Increment")){
             // increment the counter for the counter at index of position
-            System.out.println("Incrementing button at " + position);
+            counter.increment();
+            System.out.println("Incrementing button at " + position + " New Value: " + counter.getCurrentValue());
         }
         else if (buttonName.equals("Decrement")){
-            System.out.println("Decrementing button at " + position);
+            counter.decrement();
+            System.out.println("Decrementing button at " + position + " New Value: " + counter.getCurrentValue());
         }
 
     }

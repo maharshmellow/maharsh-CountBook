@@ -27,7 +27,10 @@ public class Counter {
     }
 
     public void decrement(){
-        this.currentValue -= 1;
+        if (this.currentValue > 0){
+            this.currentValue -= 1;
+        }
+
     }
 
     public void reset(){
