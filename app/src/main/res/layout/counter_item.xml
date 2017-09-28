@@ -12,17 +12,23 @@
         android:textSize="26sp"
         android:id="@+id/counter_text">
     </TextView>
+
+    <TextView
+        android:id="@+id/counter_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="center"/>
+
     <Button
         android:id="@+id/increment_counter_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Increment"
-        android:onClick="counterClickHandler"/>
+        android:text="Increment"/>
 
     <Button
         android:id="@+id/decrement_counter_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Decrement"
-        android:onClick="counterClickHandler"/>
+        android:text="Decrement"/>
 </LinearLayout>

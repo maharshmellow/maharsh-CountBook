@@ -37,6 +37,9 @@ public class Counter {
         this.currentValue = this.initialValue;
     }
 
+    public String getName(){
+        return this.name;
+    }
     public int getCurrentValue(){
         return this.currentValue;
     }
@@ -53,6 +56,7 @@ public class Counter {
         return this.dateCreated;
     }
 
+
     public void editCounter(String name, int initialValue, int currentValue, String comment){
         this.name = name;
         this.initialValue = initialValue;
@@ -61,7 +65,7 @@ public class Counter {
     }
     @Override
     public String toString(){
-        // this value will be used by the array list to display the counter name in the ListView
+        // this value will be used by the arrayadapter to display the counter name in the ListView
         return this.name;
     }
 }

@@ -20,7 +20,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final List<Counter> counters = new ArrayList<>();
+    public final ArrayList<Counter> counters = new ArrayList<>();
+    private ListView countersListView;
+    private CounterAdapter counterAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +31,22 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        countersListView = (ListView) findViewById(R.id.counters);
+//        ArrayList<Counter> counterList = new ArrayList<>();
+        counters.add(new Counter("Counter 1", 0, "comment"));
+        counters.add(new Counter("Counter 2", 0, "comment"));
+
+
         final ListView countersListView = (ListView) findViewById(R.id.counters);
 
         // initialize the counters
         // TODO load the counters from the local storage here
 
-        final ArrayAdapter<Counter> arrayAdapter = new ArrayAdapter<Counter>
-                (this, R.layout.counter_item, R.id.counter_text, counters);
+//        final ArrayAdapter<Counter> arrayAdapter = new ArrayAdapter<Counter>
+//                (this, R.layout.counter_item, R.id.counter_text, counters);
 
-        countersListView.setAdapter(arrayAdapter);
+        counterAdapter = new CounterAdapter(this, counters);
+        countersListView.setAdapter(counterAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 counters.add(c);
                 System.out.println("First: " + counters.size());
 
-                arrayAdapter.notifyDataSetChanged();
+                counterAdapter.notifyDataSetChanged();
 
             }
         });
@@ -78,30 +87,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void counterClickHandler(View v){
-        View parentRow = (View) v.getParent();
-        ListView listView = (ListView) parentRow.getParent();
-
-        // position is the index of row item in the listView being clicked
-        final int position = listView.getPositionForView(parentRow);
-
-        // buttonName is something like "Increment", "Decrement", etc.
-        // TODO remove this later when the button is converted to an image since we just need the position and don't care about the name
-        String buttonName = ((Button) v).getText().toString();
-
-        Counter counter = counters.get(position);
-
-        if (buttonName.equals("Increment")){
-            // increment the counter for the counter at index of position
-            counter.increment();
-            System.out.println("Incrementing button at " + position + " New Value: " + counter.getCurrentValue());
-        }
-        else if (buttonName.equals("Decrement")){
-            counter.decrement();
-            System.out.println("Decrementing button at " + position + " New Value: " + counter.getCurrentValue());
-        }
-
     }
 }
