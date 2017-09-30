@@ -30,7 +30,6 @@ public class Counter {
         if (this.currentValue > 0){
             this.currentValue -= 1;
         }
-
     }
 
     public void reset(){

@@ -21,6 +21,7 @@ public class CounterAdapter extends ArrayAdapter<Counter> {
     private Context context;
     private List<Counter> counterList = new ArrayList<>();
 
+
     public CounterAdapter(Context context, ArrayList<Counter> list) {
         super(context, 0 , list);
         this.context = context;
@@ -28,12 +29,12 @@ public class CounterAdapter extends ArrayAdapter<Counter> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View listItem = convertView;
         if(listItem == null)
             listItem = LayoutInflater.from(context).inflate(R.layout.counter_item,parent,false);
 
-        final Counter counter = counterList.get(position);
+        final Counter counter = MainActivity.counters.get(position);
 
 
         final TextView name = (TextView) listItem.findViewById(R.id.counter_text);
@@ -61,6 +62,20 @@ public class CounterAdapter extends ArrayAdapter<Counter> {
                 counter.decrement();
                 counterValue.setText(counter.getCurrentValue() + "");
                 System.out.println("Decrement, New Value" + counter.getCurrentValue());
+            }
+        });
+
+        listItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                final Counter counter = MainActivity.counters.get(position);
+                System.out.println("clicked row");
+                Dialog d = new Dialog(context);
+                d.editCounterDialog(counter);
+                System.out.println("clicked row");
+
+                System.out.println(counter.getName());
+                //Toast.makeText(null,"Clicked",Toast.LENGTH_LONG);
             }
         });
 

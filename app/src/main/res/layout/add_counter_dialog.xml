@@ -8,42 +8,54 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Counter Name"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        android:layout_marginStart="10dp"
+        android:paddingTop="10dp"
+        android:text="Counter Name"/>
 
     <EditText
         android:id="@+id/counter_name_input"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:hint="Enter Counter Name"
+        android:maxLines="1"
         android:padding="10dp"/>
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Counter Name"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        android:layout_marginStart="10dp"
+        android:paddingTop="10dp"
+        android:text="Counter Value"/>
 
     <EditText
         android:id="@+id/counter_value_input"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Counter Name"
-        android:padding="10dp"/>
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:hint="Enter Counter Value"
+        android:inputType="number"
+        android:padding="10dp"
+        android:text="1"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Counter Name"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        android:layout_marginStart="10dp"
+        android:paddingTop="10dp"
+        android:text="Comment"/>
 
     <EditText
         android:id="@+id/counter_comment_input"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Counter Name"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:hint="Enter Comment"
         android:padding="10dp"/>
 
 </LinearLayout>
