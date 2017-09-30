@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by maharshmellow on 2017-09-29.
@@ -24,7 +25,8 @@ public class Dialog{
         // set up the alert dialog
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View promptView = layoutInflater.inflate(R.layout.add_counter_dialog, null);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setView(promptView);
 
         final EditText counter_name = (EditText) promptView.findViewById(R.id.counter_name_input);
@@ -34,6 +36,7 @@ public class Dialog{
         alertDialogBuilder.setCancelable(false);
 
         alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
             public void onClick(DialogInterface dialog, int id) {
                 System.out.println("OK" + counter_name.getText() + counter_value.getText() + counter_comment.getText());
                 // add the new counter
@@ -42,6 +45,7 @@ public class Dialog{
                         counter_comment.getText().toString());
                 MainActivity.counters.add(c);
                 MainActivity.counterAdapter.notifyDataSetChanged();
+                MainActivity.totalCountersField.setText(MainActivity.counters.size() + " counters");
             }
         });
         alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -104,8 +108,10 @@ public class Dialog{
             public void onClick(View v) {
                 MainActivity.counters.remove(counter);
                 MainActivity.counterAdapter.notifyDataSetChanged();
+                MainActivity.totalCountersField.setText(MainActivity.counters.size() + " counters");
                 // close the alert since the counter is now deleted
                 alert.cancel();
+
             }
         });
 

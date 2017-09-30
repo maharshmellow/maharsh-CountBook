@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Counter> counters = new ArrayList<>();
     public static ListView countersListView;
     public static CounterAdapter counterAdapter;
+    public static TextView totalCountersField;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("New Title");
 
         countersListView = (ListView) findViewById(R.id.counters);
+        // the textfield at the bottom of the page that shows the total count of counters
+        totalCountersField = (TextView) findViewById(R.id.total_counters_field);
+
 //        ArrayList<Counter> counterList = new ArrayList<>();
         counters.add(new Counter("Counter 1", 0, "comment"));
         counters.add(new Counter("Counter 2", 0, "comment"));
 
-        final ListView countersListView = (ListView) findViewById(R.id.counters);
 
         // initialize the counters
         // TODO load the counters from the local storage here
@@ -50,11 +55,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Testing", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//                showNewCounterDialog();
-
                 d.newCounterDialog();
+                // update the total count of counters at the bottom of the screen
+//                totalCountersField.setText(counters.size() + " counters");
 
             }
         });
