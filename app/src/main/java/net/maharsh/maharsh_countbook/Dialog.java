@@ -2,6 +2,7 @@ package net.maharsh.maharsh_countbook;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,7 @@ public class Dialog{
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
 
+
     }
 
     public void editCounterDialog(final Counter counter){
@@ -68,7 +70,7 @@ public class Dialog{
         final EditText counter_comment = (EditText) promptView.findViewById(R.id.counter_comment_input);
         final Button delete_button = (Button) promptView.findViewById(R.id.delete_button);
 
-        // prefill the values into the edit dialog
+        // pre-fill the values into the edit dialog
         counter_name.setText(counter.getName());
         initial_counter_value.setText(Integer.toString(counter.getInitialValue()));
         counter_value.setText(Integer.toString(counter.getCurrentValue()));
@@ -102,6 +104,7 @@ public class Dialog{
             public void onClick(View v) {
                 MainActivity.counters.remove(counter);
                 MainActivity.counterAdapter.notifyDataSetChanged();
+                // close the alert since the counter is now deleted
                 alert.cancel();
             }
         });

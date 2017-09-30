@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        toolbar.setTitle("New Title");
+
         countersListView = (ListView) findViewById(R.id.counters);
 //        ArrayList<Counter> counterList = new ArrayList<>();
         counters.add(new Counter("Counter 1", 0, "comment"));
@@ -79,60 +81,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-
-    public void showEditCounterDialog(final Counter counter){
-        // set up the alert dialog
-        LayoutInflater layoutInflater = LayoutInflater.from(MainActivity.this);
-        View promptView = layoutInflater.inflate(R.layout.edit_counter_dialog, null);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-        alertDialogBuilder.setView(promptView);
-
-        final EditText counter_name = (EditText) promptView.findViewById(R.id.counter_name_input);
-        final EditText initial_counter_value = (EditText) promptView.findViewById(R.id.initial_counter_value_input);
-        final EditText counter_value = (EditText) promptView.findViewById(R.id.counter_value_input);
-        final EditText counter_comment = (EditText) promptView.findViewById(R.id.counter_comment_input);
-        final Button delete_button = (Button) promptView.findViewById(R.id.delete_button);
-
-        delete_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                counters.remove(counter);
-                counterAdapter.notifyDataSetChanged();
-            }
-        });
-
-
-        // prefill the values into the edit dialog
-        counter_name.setText(counter.getName());
-        initial_counter_value.setText(counter.getInitialValue());
-        counter_value.setText(counter.getCurrentValue());
-        counter_comment.setText(counter.getComment());
-
-        alertDialogBuilder.setCancelable(false);
-
-        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                System.out.println("OK" + counter_name.getText() + counter_value.getText() + counter_comment.getText());
-
-                counter.editCounter(counter_name.getText().toString(),
-                                    Integer.parseInt(initial_counter_value.getText().toString()),
-                                    Integer.parseInt(counter_value.getText().toString()),
-                                    counter_comment.getText().toString());
-
-                counterAdapter.notifyDataSetChanged();
-            }
-        });
-        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                System.out.println("Cancel");
-            }
-        });
-
-        // create an alert dialog
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-
     }
 }
