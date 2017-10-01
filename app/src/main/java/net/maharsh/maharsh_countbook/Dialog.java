@@ -46,11 +46,11 @@ public class Dialog{
 
                     @Override
                     public void onClick(View view) {
-                        if (counter_name.getText().length() == 0){
+                        if (counter_name.getText().toString().trim().length() == 0){
                             counter_name.setError("Please provide a counter name");
                         }
-                        if (counter_value.getText().length() == 0){
-                            counter_name.setError("Please provide a counter value");
+                        else if (counter_value.getText().toString().trim().length() == 0){
+                            counter_value.setError("Please provide a counter value");
                         }
                         else{
                             System.out.println("OK" + counter_name.getText() + counter_value.getText() + counter_comment.getText());
@@ -81,6 +81,7 @@ public class Dialog{
         final EditText initial_counter_value = (EditText) promptView.findViewById(R.id.initial_counter_value_input);
         final EditText counter_value = (EditText) promptView.findViewById(R.id.counter_value_input);
         final EditText counter_comment = (EditText) promptView.findViewById(R.id.counter_comment_input);
+        final Button reset_button = (Button) promptView.findViewById(R.id.reset_button);
         final Button delete_button = (Button) promptView.findViewById(R.id.delete_button);
 
         //pre-fill the values into the edit dialog
@@ -106,13 +107,13 @@ public class Dialog{
 
                     @Override
                     public void onClick(View view) {
-                        if (counter_name.getText().length() == 0){
+                        if (counter_name.getText().toString().trim().length() == 0){
                             counter_name.setError("Please provide a counter name");
                         }
-                        if (counter_value.getText().length() == 0){
+                        else if (counter_value.getText().toString().trim().length() == 0){
                             counter_name.setError("Please provide a counter value");
                         }
-                        if (initial_counter_value.getText().length() == 0){
+                        else if (initial_counter_value.getText().toString().trim().length() == 0){
                             initial_counter_value.setError("Please provide an initial counter value");
                         }
                         else{
@@ -129,6 +130,14 @@ public class Dialog{
                     }
                 });
 
+            }
+        });
+        reset_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                counter.reset();
+                MainActivity.counterAdapter.notifyDataSetChanged();
+                d.dismiss();
             }
         });
         delete_button.setOnClickListener(new View.OnClickListener() {

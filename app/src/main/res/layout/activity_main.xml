@@ -26,6 +26,7 @@
                 android:layout_weight="1"
                 android:text="5 Counters"
                 android:textAlignment="textStart"
+                android:gravity="start"
                 android:textSize="15sp"/>
 
             <Button
@@ -43,15 +44,5 @@
 
     <include layout="@layout/content_main"
              android:id="@+id/include" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="30dp"
-        android:layout_marginRight="10dp"
-        app:backgroundTint="#272727"
-        app:srcCompat="@mipmap/ic_launcher"/>
 
 </android.support.design.widget.CoordinatorLayout>

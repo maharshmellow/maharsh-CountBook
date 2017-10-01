@@ -22,6 +22,7 @@
             android:layout_margin="10dp"
             android:text="Counter 1"
             android:textAlignment="textStart"
+            android:gravity="start"
             android:textColor="#ffffff"
             android:textSize="22sp"
             android:textStyle="bold">
@@ -32,19 +33,22 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="-15dp"
             android:text="0"
             android:textAlignment="textStart"
+            android:gravity="start"
             android:textColor="#ffffff"
             android:textSize="55sp"/>
 
         <TextView
-            android:id="@+id/date_text"
+            android:id="@+id/counter_date"
             android:layout_width="match_parent"
             android:layout_height="23dp"
             android:layout_marginStart="10dp"
-            android:text="Last Modified: January 20, 2017"
+            android:layout_marginLeft="10dp"
             android:textAlignment="textStart"
+            android:gravity="start"
             android:textColor="#9B9B9B"
             android:textSize="11sp">
         </TextView>

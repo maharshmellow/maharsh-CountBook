@@ -1,5 +1,6 @@
 package net.maharsh.maharsh_countbook;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
 
 public class Counter {
     private String name;
-    private Date dateCreated;
+    private String dateModified;
     private int initialValue;
     private int currentValue;
     private String comment;
@@ -16,10 +17,11 @@ public class Counter {
     public Counter(String name, int initialValue, String comment){
         // creates a new counter
         this.name = name;
-        this.dateCreated = new Date();
+        this.dateModified = new SimpleDateFormat("yyyy-MM-dd").format(new Date());;
         this.initialValue = initialValue;
         this.currentValue = initialValue;
         this.comment = comment;
+        System.out.println(this.dateModified);
     }
 
     public void increment(){
@@ -51,8 +53,8 @@ public class Counter {
         return this.comment;
     }
 
-    public Date getDateCreated(){
-        return this.dateCreated;
+    public String getDateModified(){
+        return this.dateModified;
     }
 
 
@@ -61,6 +63,7 @@ public class Counter {
         this.initialValue = initialValue;
         this.currentValue = currentValue;
         this.comment = comment;
+        this.dateModified = new SimpleDateFormat("yyyy-MM-dd").format(new Date());;
     }
     @Override
     public String toString(){
