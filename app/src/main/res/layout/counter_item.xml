@@ -45,10 +45,37 @@
             android:id="@+id/counter_date"
             android:layout_width="match_parent"
             android:layout_height="23dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginBottom="-8dp"
             android:layout_marginLeft="10dp"
-            android:textAlignment="textStart"
+            android:layout_marginStart="10dp"
             android:gravity="start"
+            android:textAlignment="textStart"
+            android:textColor="#9B9B9B"
+            android:textSize="11sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/counter_initial_value"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:textAlignment="textStart"
+            android:textColor="#9B9B9B"
+            android:textSize="11sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/counter_comment"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:textAlignment="textStart"
             android:textColor="#9B9B9B"
             android:textSize="11sp">
         </TextView>

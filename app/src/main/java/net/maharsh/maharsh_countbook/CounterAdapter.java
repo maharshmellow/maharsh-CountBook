@@ -43,7 +43,13 @@ public class CounterAdapter extends ArrayAdapter<Counter> {
         counterValue.setText(counter.getCurrentValue() + "");
 
         final TextView date = (TextView) listItem.findViewById(R.id.counter_date);
-        date.setText(counter.getDateModified() + "");
+        date.setText("Date Modified: " + counter.getDateModified());
+
+        final TextView initialValue = (TextView) listItem.findViewById(R.id.counter_initial_value);
+        initialValue.setText("Initial Value: " + counter.getInitialValue());
+
+        final TextView comment = (TextView) listItem.findViewById(R.id.counter_comment);
+        comment.setText("Comment: " + counter.getComment());
 
         Button incrementButton = (Button) listItem.findViewById(R.id.increment_counter_button);
         incrementButton.setOnClickListener(new View.OnClickListener() {
