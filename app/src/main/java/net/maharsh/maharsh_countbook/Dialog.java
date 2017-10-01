@@ -62,6 +62,7 @@ public class Dialog{
                             MainActivity.counterAdapter.notifyDataSetChanged();
                             MainActivity.totalCountersField.setText(MainActivity.counters.size() + " counters");
 
+                            MainActivity.saveData(context);
                             d.dismiss();
                         }
                     }
@@ -125,6 +126,7 @@ public class Dialog{
                                     counter_comment.getText().toString());
 
                             MainActivity.counterAdapter.notifyDataSetChanged();
+                            MainActivity.saveData(context);
                             d.dismiss();
                         }
                     }
@@ -137,6 +139,7 @@ public class Dialog{
             public void onClick(View v) {
                 counter.reset();
                 MainActivity.counterAdapter.notifyDataSetChanged();
+                MainActivity.saveData(context);
                 d.dismiss();
             }
         });
@@ -146,6 +149,7 @@ public class Dialog{
                 MainActivity.counters.remove(counter);
                 MainActivity.counterAdapter.notifyDataSetChanged();
                 MainActivity.totalCountersField.setText(MainActivity.counters.size() + " counters");
+                MainActivity.saveData(context);
                 // close the alert since the counter is now deleted
                 d.dismiss();
 

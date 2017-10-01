@@ -36,7 +36,6 @@ public class CounterAdapter extends ArrayAdapter<Counter> {
 
         final Counter counter = MainActivity.counters.get(position);
 
-
         final TextView name = (TextView) listItem.findViewById(R.id.counter_text);
         name.setText(counter.getName());
 
@@ -53,6 +52,7 @@ public class CounterAdapter extends ArrayAdapter<Counter> {
             public void onClick(View v) {
                 counter.increment();
                 counterValue.setText(counter.getCurrentValue() + "");
+                MainActivity.saveData(context);
             }
         });
 
@@ -63,6 +63,7 @@ public class CounterAdapter extends ArrayAdapter<Counter> {
             public void onClick(View v) {
                 counter.decrement();
                 counterValue.setText(counter.getCurrentValue() + "");
+                MainActivity.saveData(context);
             }
         });
 
