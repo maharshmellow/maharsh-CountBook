@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by maharshmellow on 2017-09-24.
+ * Represents a Counter and stores information related to an individual Counter object
  */
 
 public class Counter {
@@ -14,20 +14,27 @@ public class Counter {
     private int currentValue;
     private String comment;
 
+    /**
+     * Creates a new Counter
+     * @param name Name of the counter
+     * @param initialValue Initial Value of the counter
+     * @param comment Optional Comment for the counter
+     */
     public Counter(String name, int initialValue, String comment){
-        // creates a new counter
         this.name = name;
         this.dateModified = new SimpleDateFormat("yyyy-MM-dd").format(new Date());;
         this.initialValue = initialValue;
-        this.currentValue = initialValue;
+        this.currentValue = initialValue;   // initially the current value is the initial value
         this.comment = comment;
-        System.out.println(this.dateModified);
     }
 
     public void increment(){
         this.currentValue += 1;
     }
 
+    /**
+     * Decrements the counter as long as it doesn't go below 0
+     */
     public void decrement(){
         if (this.currentValue > 0){
             this.currentValue -= 1;
@@ -41,6 +48,7 @@ public class Counter {
     public String getName(){
         return this.name;
     }
+
     public int getCurrentValue(){
         return this.currentValue;
     }
@@ -57,7 +65,14 @@ public class Counter {
         return this.dateModified;
     }
 
-
+    /**
+     * Edits the counter data
+     * Called when the person presses the edit button and makes changes
+     * @param name
+     * @param initialValue
+     * @param currentValue
+     * @param comment
+     */
     public void editCounter(String name, int initialValue, int currentValue, String comment){
         this.name = name;
         this.initialValue = initialValue;
@@ -65,9 +80,5 @@ public class Counter {
         this.comment = comment;
         this.dateModified = new SimpleDateFormat("yyyy-MM-dd").format(new Date());;
     }
-    @Override
-    public String toString(){
-        // this value will be used by the arrayadapter to display the counter name in the ListView
-        return this.name;
-    }
+
 }

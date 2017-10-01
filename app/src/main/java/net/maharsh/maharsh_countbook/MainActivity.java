@@ -22,6 +22,15 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ *  Handles loading/saving data and the main backend interaction like keeping track
+ *  of counters and managing the ListView. This also handles everything in the toolbar
+ *  at the top like the field that displays the total number of counters and also the add
+ *  counter button at the top right. The ArrayAdapter is initialized here as well.
+ *  When the add button is clicked, it creates an instance of the dialog class which handles
+ *  the rest of the interactions.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String FILENAME = "data.sav";
@@ -35,19 +44,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // the button at the top right for adding counters
         Button addButton = (Button) findViewById(R.id.add_counter_button);
 
-        countersListView = (ListView) findViewById(R.id.counters);
         totalCountersField = (TextView) findViewById(R.id.total_counters_field);
+        countersListView = (ListView) findViewById(R.id.counters);
 
-        loadData(this);
-        // TODO load the counters from the local storage here
+        loadData();
 
+        // update the total number of counters after loading them from storage
         totalCountersField.setText(MainActivity.counters.size() + " counters");
 
         counterAdapter = new CounterAdapter(this, counters);
         countersListView.setAdapter(counterAdapter);
 
+        // handles the popup alert dialogs
         final Dialog d = new Dialog(this);
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -58,9 +69,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public static void loadData(Context context){
+
+    /**
+     * Loads the data from the local storage
+     * Taken from the lab code
+     */
+    public void loadData(){
         try {
-            FileInputStream fis = context.openFileInput(FILENAME);
+            FileInputStream fis = openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 
             Gson gson = new Gson();
@@ -76,20 +92,24 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    /**
+     * Saves the data to the local storage
+     * Taken from the lab code
+     *
+     * @param context required since this will be called from another class later on
+     */
     public static void saveData(Context context){
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME,
                     Context.MODE_PRIVATE);
-
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
 
             Gson gson = new Gson();
             gson.toJson(counters, out);
-            out.flush();
 
+            out.flush();
             fos.close();
 
-            System.out.println("Save");
         } catch (FileNotFoundException e) {
             throw new RuntimeException();
         } catch (IOException e) {
