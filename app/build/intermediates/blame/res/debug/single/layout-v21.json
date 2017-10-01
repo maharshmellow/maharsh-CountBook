@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/layout-v21/notification_action.xml"
+    }
+]

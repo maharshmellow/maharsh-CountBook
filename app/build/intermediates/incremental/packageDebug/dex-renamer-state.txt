@@ -1,0 +1,7 @@
+#Sun Oct 01 15:42:50 MDT 2017
+base.0=/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4573065f770922ea6d9c1f4bb2f69390c6637aa7
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9adbff2a52387585e8bdb4e96955e8750c5b6620/classes.dex
+base.1=/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9adbff2a52387585e8bdb4e96955e8750c5b6620
+file.0=/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4573065f770922ea6d9c1f4bb2f69390c6637aa7/classes.dex

@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/ef3231cb9f58a0e39947973cb8d4f83475467f67/output/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/maharshmellow/Google Drive/Code/Github/maharsh-CountBook/app/build/intermediates/res/merged/debug/color-v23/design_tint_password_toggle.xml",
+        "source": "/Users/maharshmellow/.android/build-cache/c47eba659cabf8f3ef1ad0b14d2add739793aec4/output/res/color-v23/design_tint_password_toggle.xml"
+    }
+]

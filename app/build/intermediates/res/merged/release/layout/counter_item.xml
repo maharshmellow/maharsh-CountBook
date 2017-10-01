@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/test"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#272727"
+              android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.21"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/counter_text"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_margin="10dp"
+            android:text="Counter 1"
+            android:textAlignment="textStart"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            android:textStyle="bold">
+        </TextView>
+
+        <TextView
+            android:id="@+id/counter_value"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-15dp"
+            android:text="0"
+            android:textAlignment="textStart"
+            android:textColor="#ffffff"
+            android:textSize="55sp"/>
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_marginStart="10dp"
+            android:text="Last Modified: January 20, 2017"
+            android:textAlignment="textStart"
+            android:textColor="#9B9B9B"
+            android:textSize="11sp">
+        </TextView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/decrement_counter_button"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-7dp"
+        android:layout_marginTop="-7dp"
+        android:layout_weight="1"
+        android:background="#FF5A5A"
+        android:padding="0dp"
+        android:text="-1"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/increment_counter_button"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-7dp"
+        android:layout_marginTop="-7dp"
+        android:layout_weight="1"
+        android:background="#5AFFD9"
+        android:padding="0dp"
+        android:text="+1"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="24sp"/>
+
+</LinearLayout>
